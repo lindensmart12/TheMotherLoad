@@ -5,6 +5,7 @@
 #include "CoreMinimal.h"
 #include "GameFramework/PlayerController.h"
 #include "InputActionValue.h"
+#include "TheMotherLoad/Public/Enums/SlickPlayerStateEnum.h"
 #include "BP_PlayerController.generated.h"
 
 class UInputAction;

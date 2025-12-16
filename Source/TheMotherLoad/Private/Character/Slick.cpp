@@ -20,6 +20,7 @@ ASlick::ASlick()
 
 }
 
+
 // Called when the game starts or when spawned
 void ASlick::BeginPlay()
 {
@@ -41,3 +42,14 @@ void ASlick::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 
 }
 
+// Recieve Character State based on Input from PlayerController
+void ASlick::RecieveCharacterState(ESlickCharacterState NewState)
+{
+	CurrentState = NewState;
+}
+
+// Send PlayerState to Animation Blueprint using Interfaces
+ESlickCharacterState ASlick::GetPlayerState_Implementation(ESlickCharacterState NewState)
+{
+	return CurrentState;
+}

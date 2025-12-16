@@ -135,15 +135,15 @@ void ABP_PlayerController::MeleeAttack()
 
 void ABP_PlayerController::SelectPrimaryWeapon()
 {
-	UE_LOG(LogTemp, Warning, TEXT("SelectPrimaryWeapon Input Received"));
+	SlickPlayerCharacter->RecieveCharacterState(ESlickCharacterState::PrimaryWeapon);
 }
 
 void ABP_PlayerController::SelectSecondaryWeapon()
 {
-	UE_LOG(LogTemp, Warning, TEXT("SelectSecondaryWeapon Input Received"));
+	SlickPlayerCharacter->RecieveCharacterState(ESlickCharacterState::SecondaryWeapon);
 }
 
 void ABP_PlayerController::SelectMeleeWeapon()
 {
-	UE_LOG(LogTemp, Warning, TEXT("SelectMeleeWeapon Input Received"));
+	SlickPlayerCharacter->RecieveCharacterState(ESlickCharacterState::TertiaryWeapon);
 }

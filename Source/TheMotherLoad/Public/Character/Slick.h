@@ -4,13 +4,15 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
+#include "TheMotherLoad/Public/Enums/SlickPlayerStateEnum.h"
+#include "TheMotherLoad/Public/Interface/PlayerAnimationInterface.h"
 #include "Slick.generated.h"
 
 class USpringArmComponent;
 class UCameraComponent;
 
 UCLASS()
-class THEMOTHERLOAD_API ASlick : public ACharacter
+class THEMOTHERLOAD_API ASlick : public ACharacter, public IPlayerAnimationInterface
 {
 	GENERATED_BODY()
 
@@ -23,6 +25,15 @@ public:
 
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
+	
+	// Get PlayerState from PlayerController
+	void RecieveCharacterState(ESlickCharacterState NewState);
+
+
+	//Interfaces
+	
+	// Send PlayerState to Animation Blueprint using Interfaces
+	ESlickCharacterState GetPlayerState_Implementation() override;
 
 protected:
 	// Called when the game starts or when spawned
@@ -35,4 +46,9 @@ protected:
 	// Camera Component
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Components")
 	TObjectPtr < UCameraComponent> CameraComp;
+
+
+	// Default CharacterState
+	ESlickCharacterState CurrentState = ESlickCharacterState::PrimaryWeapon;
+
 };
