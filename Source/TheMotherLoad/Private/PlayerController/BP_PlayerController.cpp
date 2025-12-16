@@ -43,7 +43,7 @@ void ABP_PlayerController::SetupInputComponent()
 	PlayerEnhancedInputComponent->BindAction(PlayerSprintAction, ETriggerEvent::Completed, this, &ABP_PlayerController::PlayerSprintStop);
 
 	// Weapon Input Bindings
-	PlayerEnhancedInputComponent->BindAction(FireWeaponAction, ETriggerEvent::Started, this, &ABP_PlayerController::FireWeapon);
+	PlayerEnhancedInputComponent->BindAction(FireWeaponAction, ETriggerEvent::Triggered, this, &ABP_PlayerController::FireWeapon);
 	PlayerEnhancedInputComponent->BindAction(AimWeaponAction, ETriggerEvent::Triggered, this, &ABP_PlayerController::AimWeapon);
 	PlayerEnhancedInputComponent->BindAction(ReloadWeaponAction, ETriggerEvent::Started, this, &ABP_PlayerController::ReloadWeapon);
 	PlayerEnhancedInputComponent->BindAction(MeleeAttackAction, ETriggerEvent::Started, this, &ABP_PlayerController::MeleeAttack);
