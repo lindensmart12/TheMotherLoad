@@ -1,14 +1,47 @@
-Binaries
-DerivedDataCache
-Intermediate
-Saved
-.vscode
-.vs
-*.VC.db
-*.opensdf
+# --- Build Products ---
+Binaries/
+Build/
+DerivedDataCache/
+Intermediate/
+Saved/
+*.pdb
+*.obj
+*.log
+*.tlog
+*.idb
+*.ipdb
+*.iobj
+*.db
 *.opendb
-*.sdf
+*.VC.db
+*.VC.opendb
+
+# --- IDE / Tool Cache ---
+.vs/
 *.sln
 *.suo
-*.xcodeproj
-*.xcworkspace
+*.user
+*.userprefs
+
+# --- Plugin binaries ---
+Plugins/*/Binaries/
+Plugins/*/Intermediate/
+
+# --- OS Files ---
+.DS_Store
+Thumbs.db
+
+# --- Ignore shader + backup caches ---
+ShaderCache/
+DerivedDataCache/
+Saved/Autosaves/
+Saved/Backup/
+Saved/Logs/
+
+# --- OK TO TRACK ---
+# Do NOT ignore these:
+# /Config/
+# /Content/
+# /Source/
+# *.uproject
+# .vsconfig

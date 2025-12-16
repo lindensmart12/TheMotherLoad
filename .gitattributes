@@ -1,1 +1,15 @@
-Content/** filter=lfs diff=lfs merge=lfs -text
+# --- Unreal Engine Binary Assets ---
+*.uasset filter=lfs diff=lfs merge=lfs
+*.umap   filter=lfs diff=lfs merge=lfs
+*.fbx    filter=lfs diff=lfs merge=lfs
+*.png    filter=lfs diff=lfs merge=lfs
+*.jpg    filter=lfs diff=lfs merge=lfs
+*.wav    filter=lfs diff=lfs merge=lfs
+*.mp3    filter=lfs diff=lfs merge=lfs
+
+# --- Text Normalization ---
+*.ini text eol=lf
+*.cpp text
+*.h   text
+*.cs  text
+*.uproject text
