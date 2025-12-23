@@ -72,8 +72,8 @@ void ABP_PlayerController::PlayerMove(const FInputActionValue& Value)
 		const FVector ForwardDirection = FRotationMatrix(YawRotation).GetUnitAxis(EAxis::X);
 		const FVector RightDirection = FRotationMatrix(YawRotation).GetUnitAxis(EAxis::Y);
 
-		SlickPlayerCharacter->AddMovementInput(ForwardDirection, MovementVector.Y);
-		SlickPlayerCharacter->AddMovementInput(RightDirection, MovementVector.X);
+		SlickPlayerCharacter->AddMovementInput(ForwardDirection, MovementVector.X);
+		SlickPlayerCharacter->AddMovementInput(RightDirection, MovementVector.Y);
 	}
 }
 
