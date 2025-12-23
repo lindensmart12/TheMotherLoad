@@ -49,6 +49,7 @@ protected:
 
 
 	// Default CharacterState
-	ESlickCharacterState CurrentState = ESlickCharacterState::PrimaryWeapon;
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "PlayerCharacterState")
+	ESlickCharacterState CurrentPlayerState = ESlickCharacterState::PrimaryWeapon;
 
 };

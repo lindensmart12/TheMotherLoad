@@ -5,7 +5,7 @@
 #include "CoreMinimal.h"
 #include "SlickPlayerStateEnum.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class ESlickCharacterState : uint8
 {
 	PrimaryWeapon = 0 UMETA(DisplayName = "Unarmed/Rifle"),
