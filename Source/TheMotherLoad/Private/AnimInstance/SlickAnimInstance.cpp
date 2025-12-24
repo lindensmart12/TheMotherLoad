@@ -29,8 +29,17 @@ void USlickAnimInstance::NativeUpdateAnimation(float DeltaSeconds)
 	}
 	else{
 		GetPlayerState();
+		GetCharacterSpeed();
 		return;
 		}
+}
+
+void USlickAnimInstance::GetCharacterSpeed()
+{
+	if (SlickCharacter)
+	{
+		SlickCharacterSpeed = SlickCharacter->GetVelocity().Size();
+	}
 }
 
 void USlickAnimInstance::GetPlayerState()

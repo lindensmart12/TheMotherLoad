@@ -8,9 +8,9 @@
 UENUM(BlueprintType)
 enum class ESlickCharacterState : uint8
 {
-	PrimaryWeapon = 0 UMETA(DisplayName = "Unarmed/Rifle"),
-	SecondaryWeapon = 1 UMETA(DisplayName = "Pistol"),
-	TertiaryWeapon = 2 UMETA(DisplayName = "Melee/Knife")
+	PrimaryWeapon UMETA(DisplayName = "Unarmed/Rifle"),
+	SecondaryWeapon UMETA(DisplayName = "Pistol"),
+	TertiaryWeapon UMETA(DisplayName = "Melee/Knife")
 };
 
 /**

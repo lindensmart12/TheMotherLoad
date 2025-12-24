@@ -6,6 +6,7 @@
 #include "GameFramework/Character.h"
 #include "TheMotherLoad/Public/Enums/SlickPlayerStateEnum.h"
 #include "TheMotherLoad/Public/Interface/PlayerAnimationInterface.h"
+#include "TheMotherLoad/Public/Enums/EPlayerStateLocomotion.h"
 #include "Slick.generated.h"
 
 class USpringArmComponent;
@@ -35,6 +36,9 @@ public:
 	// Send PlayerState to Animation Blueprint using Interfaces
 	ESlickCharacterState GetPlayerState_Implementation() override;
 
+	// Set Locomotion State
+	void SetLocomotionState(EPlayerStateLocomotion NewLocomotionState);
+
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
@@ -52,4 +56,6 @@ protected:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "PlayerCharacterState")
 	ESlickCharacterState CurrentPlayerState = ESlickCharacterState::PrimaryWeapon;
 
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "PlayerCharacterState")
+	EPlayerStateLocomotion CurrentLocomotionState;
 };

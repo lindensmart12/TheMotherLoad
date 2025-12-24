@@ -32,6 +32,12 @@ protected:
 	// PlayerState
 	ESlickCharacterState CurrentState;
 
+	// Character Speed
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Character Movement")
+	float SlickCharacterSpeed;
+
+	void GetCharacterSpeed();
+
 
 	bool bInterfacesImplemented;
 

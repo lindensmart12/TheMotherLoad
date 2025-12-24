@@ -5,6 +5,7 @@
 #include "TheMotherLoad/Public/Character/Slick.h"
 #include "EnhancedInputSubsystems.h"
 #include "EnhancedInputComponent.h"
+#include "GameFramework/CharacterMovementComponent.h"
 
 void ABP_PlayerController::BeginPlay()
 {
@@ -15,6 +16,12 @@ void ABP_PlayerController::BeginPlay()
 
 	if (SlickPlayerCharacter)
 	{
+
+
+		//Set Character Movement Speed
+		SlickPlayerCharacter->GetCharacterMovement()->MaxWalkSpeed = CharacterWalkSpeed;
+
+		// Add Input Mapping Contexts to Player Controller's Enhanced Input Subsystem
 		TObjectPtr < APlayerController > PlayerController = Cast < APlayerController >(SlickPlayerCharacter->GetController());
 		if (PlayerController)
 		{
@@ -95,12 +102,14 @@ void ABP_PlayerController::PlayerJump()
 
 void ABP_PlayerController::PlayerSprintStart()
 {
-	UE_LOG(LogTemp, Warning, TEXT("PlayerSprintStart Input Received"));
+	/*SlickPlayerCharacter->GetCharacterMovement()->MaxWalkSpeed = CharacterRunSpeed;*/
+	SlickPlayerCharacter->SetLocomotionState(EPlayerStateLocomotion::Jogging);
 }
 
 void ABP_PlayerController::PlayerSprintStop()
 {
-	UE_LOG(LogTemp, Warning, TEXT("PlayerSprintStop Input Received"));
+	//SlickPlayerCharacter->GetCharacterMovement()->MaxWalkSpeed = CharacterWalkSpeed;
+	SlickPlayerCharacter->SetLocomotionState(EPlayerStateLocomotion::Walking);
 }
 
 

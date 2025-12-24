@@ -55,3 +55,8 @@ ESlickCharacterState ASlick::GetPlayerState_Implementation()
 {
 	return CurrentPlayerState;
 }
+
+void ASlick::SetLocomotionState(EPlayerStateLocomotion NewLocomotionState)
+{
+	CurrentLocomotionState = NewLocomotionState;
+}

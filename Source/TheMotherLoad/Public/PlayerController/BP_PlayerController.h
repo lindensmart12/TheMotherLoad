@@ -30,7 +30,12 @@ protected:
 	// Player Character
 	TObjectPtr < ASlick > SlickPlayerCharacter;
 
+	// Character Speed
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Character Movement")
+	float CharacterWalkSpeed;
 
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Character Movement")
+	float CharacterRunSpeed;
 
 
 
